@@ -70,19 +70,18 @@ wkhtmltopdf support:
   to the executable.
   3. Check http://code.google.com/p/wkhtmltopdf/ for further information.
 
-SprintPDF support:
-//Add our own docs
-  TCPDF's support for CSS is considerably worse than the other tools.
-  Unicode is supported (use of Unicode fonts result in HUGE files).  Page
-  header and footer are supported. This module requires TCPDF >= 5.9.012.
+Sprint PDF support:
+  Sprint PDF is an online HTML-to-PDF conversion tool. It also has powerful
+  API that can be used in web applications. Using this option does not require
+  any downloading or installation, and it is platform independant. It can be 
+  run on Windows as well as Linux servers.
 
-  1. Download TCPDF from http://sourceforge.net/projects/tcpdf/
-  2. Extract the contents of the downloaded package into one of the
-  supported paths.  There is no need to modify the config/tcpdf_config.php
-  file, as the module self-configures TCPDF.
-  3. Grant write access to the cache and images directories to your
-  webserver user.
-  4. Check http://tcpdf.sourceforge.net/ for further information.
+  1. Go to http://www.sprintpdf.com and create an account
+  2. Next, in your Drupal installation, go to 
+  admin/config/user-interface/print/pdf and choose Sprint PDF as 
+  the *PDF generation tool*
+  3. Scroll down to the section that says *Sprint PDF options*
+  4. Enter your Sprint PDF username and password
 
 UPDATE
 ------
