@@ -249,16 +249,23 @@ function print_pdf_settings() {
         '#token_types' => array('node'),
       );
     }
-    $form['settings']['print_pdf_sprintpdf_options'] = array(
+
+    $form['settings']['sprintpdf_options'] = array(
+      '#type' => 'fieldset',
+      '#title' => t('Sprint PDF options'),
+      '#collapsible' => TRUE,
+      '#collapsed' => FALSE,
+    );
+    $form['settings']['sprintpdf_options']['print_pdf_sprintpdf_options'] = array(
       '#type' => 'textfield',
       '#title' => t('SprintPDF options'),
       '#size' => 60,
       '#maxlength' => 500,
       '#default_value' => variable_get('print_pdf_sprintpdf_options', PRINT_PDF_SPRINTPDF_OPTIONS),
-      '#description' => t('(SprintPDF only) Set any additional options to be passed to the SprintPDF API. Tokens may be used in these options (see list above). To see complete list of options, click !here.',array('!here' =>
+      '#description' => t('(SprintPDF only) Set any additional options to be passed to the SprintPDF API. Tokens may be used in these options (see list above). To see a complete list of options, click !here.',array('!here' =>
         l(t('here'),'http://www.sprintpdf.com/Documentation/options',array("attributes" => array("target" => "_blank"))))),
     );
-    $form['settings']['print_pdf_sprintpdf_username'] = array(
+    $form['settings']['sprintpdf_options']['print_pdf_sprintpdf_username'] = array(
       '#type' => 'textfield',
       '#title' => t('SprintPDF username'),
       '#size' => 60,
@@ -266,7 +273,7 @@ function print_pdf_settings() {
       '#default_value' => variable_get('print_pdf_sprintpdf_username',NULL ),
       '#description' => t('(SprintPDF only) Your !sprintpdfurl login name. ',array('!sprintpdfurl' => l('SprintPDF', 'http://www.sprintpdf.com', array("attributes" => array("target" => "_blank"))))),
     );
-    $form['settings']['print_pdf_sprintpdf_password'] = array(
+    $form['settings']['sprintpdf_options']['print_pdf_sprintpdf_password'] = array(
       '#type' => 'password',
       '#title' => t('SprintPDF key'),
       '#size' => 60,
@@ -274,6 +281,7 @@ function print_pdf_settings() {
       '#default_value' => variable_get('print_pdf_sprintpdf_password', NULL),
       '#description' => t('(SprintPDF only) Your !sprintpdfurl login password. ',array('!sprintpdfurl' => l('SprintPDF', 'http://www.sprintpdf.com', array("attributes" => array("target" => "_blank"))))),
     );
+
     $form['settings']['print_pdf_display_sys_urllist'] = array(
       '#type' => 'checkbox',
       '#title' => t('Printer-friendly URLs list in system pages'),
